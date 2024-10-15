@@ -1,0 +1,79 @@
+<!-- header.html -->
+<nav class="navbar navbar-expand-lg navbar-dark shadow-sm p-3" style="background-color: #d9534f;">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="/" style="font-size: 1.8rem; color: white;">OYO</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible Content -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <!-- Links -->
+            <ul class="navbar-nav me-4">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'register' %}">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">About Us</a>
+                </li>
+            </ul>
+
+            <!-- Search Form -->
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="border-radius: 25px; border: none; padding: 10px;">
+                <button class="btn btn-light" type="submit" style="border-radius: 25px; color: #d9534f;">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<!-- Custom Styles -->
+<style>
+    .navbar {
+        background-color: #d9534f; /* OYO-like red */
+    }
+
+    .navbar-brand {
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        transition: background-color 0.3s ease;
+    }
+
+    .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+    }
+
+    .form-control {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #fff;
+    }
+
+    .form-control::placeholder {
+        color: #eaeaea;
+    }
+
+    .btn-light {
+        background-color: #fff;
+        color: #d9534f;
+    }
+
+    .navbar-toggler {
+        border: none;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba%28255, 255, 255, 0.7%29" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+    }
+</style>

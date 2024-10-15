@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block start %}
+    <div class="container mt-5 pt-5 pb-5">
+        <div class="col-6 mx-auto card shadow p-4" style="border:none">
+            <form method="POST">
+                {% include 'alerts.html' %}
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">OTP</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" name="otp">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+    function sendOtp(){
+        let email = document.getElementById('exampleInputEmail1').value;
+        if(email == ""){
+            alert("Email can't be null")
+        }
+        window.location.href = `/accounts/otp-auth/${email}/`
+    }
+    </script>
+{% endblock %}

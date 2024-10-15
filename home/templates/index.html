@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block start %}
+    <style>
+        .resort-image {
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-wrapper {
+            transition: transform 0.2s;
+        }
+        .card-wrapper:hover {
+            transform: scale(1.05);
+        }
+    </style>
+    <div class="container mt-5 pt-5 pb-5">
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="card shadow card-wrapper">
+                    <img src="{% static 'img/Resort1.jpg' %}" class="card-img-top resort-image" alt="Serenity Springs Resort"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Serenity Springs Resort</h5>
+                        <p class="card-text">Welcome to Serenity Springs Resort.</p>
+                        <span class="badge text-bg-primary">Swimming Pool</span>
+                        <span class="badge text-bg-primary">AC</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card shadow card-wrapper">
+                    <img src="{% static 'img/Resort2.jpg' %}" class="card-img-top resort-image" alt="Tranquil Retreat Resort"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Tranquil Retreat Resort</h5>
+                        <p class="card-text">Welcome to Tranquil Retreat Resort</p>
+                        <span class="badge text-bg-primary">Swimming Pool</span>
+                        <span class="badge text-bg-primary">AC</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card shadow card-wrapper">
+                    <img src="{% static 'img/Resort3.jpg' %}" class="card-img-top resort-image" alt="Blissful Bay Resort"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Blissful Bay Resort</h5>
+                        <p class="card-text">Welcome to Blissful Bay Resort</p>
+                        <span class="badge text-bg-primary">Swimming Pool</span>
+                        <span class="badge text-bg-primary">AC</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card shadow card-wrapper">
+                    <img src="{% static 'img/Resort4.jpg' %}" class="card-img-top resort-image" alt="Crystal Waters Resort"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Crystal Waters Resort</h5>
+                        <p class="card-text">Welcome to Crystal Waters Resort</p>
+                        <span class="badge text-bg-primary">Swimming Pool</span>
+                        <span class="badge text-bg-primary">AC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
