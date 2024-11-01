@@ -9,28 +9,33 @@
             <div class="col-lg-3 col-md-6 mb-4">
                 <h5>Contact</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="text-white">Email Us</a></li>
-                    <li><a href="#" class="text-white">Support</a></li>
+                    <li><a href="{% url 'contact' %}" class="text-white" style="text-decoration: none;">Email Us</a></li>
+                    <li><a href="#" class="text-white" style="text-decoration: none;">Support</a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-6 mb-4">
                 <h5>Follow Us</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="text-white">Facebook</a></li>
-                    <li><a href="#" class="text-white">Twitter</a></li>
-                    <li><a href="#" class="text-white">Instagram</a></li>
+                    <li><a href="https://www.facebook.com" class="text-white" style="text-decoration: none;">Facebook</a></li>
+                    <li><a href="https://www.twitter.com" class="text-white" style="text-decoration: none;">Twitter</a></li>
+                    <li><a href="https://www.instagram.com" class="text-white" style="text-decoration: none;">Instagram</a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-6 mb-4">
                 <h5>Legal</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="text-white">Privacy Policy</a></li>
-                    <li><a href="#" class="text-white">Terms of Service</a></li>
+                    <li><a href="#" class="text-white" style="text-decoration: none;">Privacy Policy</a></li>
+                    <li><a href="#" class="text-white" style="text-decoration: none;">Terms of Service</a></li>
                 </ul>
             </div>
         </div>
         <div class="text-center mt-4">
-            <p>All Rights Reserved 2024. OYO CLONE</p>
+            <footer class="bg-dark py-3">
+                <p class="text-center text-white mb-0">All Rights Reserved 2024. OYO CLONE |
+                    <a href="{% url 'login_vendor' %}" class="text-decoration-none text-white">Login Vendor</a> |
+                    <a href="{% url 'register_vendor' %}" class="text-decoration-none text-white">Register Vendor</a>
+                </p>
+            </footer>
         </div>
     </div>
 </footer>

@@ -19,13 +19,19 @@ class HotalUser(User):
     def verify_otp(self, input_otp):
         return self.otp == input_otp
 
+    class Meta:
+        db_table = 'hotal_user'
 
 class HotalVendor(User):
+    business_name = models.CharField(max_length=100)
     phone_number = models.CharField(unique=True, max_length=12)
     profile_picture = models.ImageField(upload_to='profile', default='profile_pictures/default.png')
     email_token = models.CharField(max_length=100, null=True, blank=True)
     otp = models.CharField(max_length=10, null=True, blank=True)
     is_varified = models.BooleanField(default=False)
+
+    class Meta:
+        db_table = 'hotal_vendor'
 
 
 

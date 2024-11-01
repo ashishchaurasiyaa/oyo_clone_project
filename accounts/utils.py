@@ -13,7 +13,7 @@ def generateRandomToken():
 def sendEmailToken(email, token):
     subject = "Verify Your Email Address"
     message = f"""Hi Please verify you email account by clicking this link 
-    http://127.0.0.1:8000/account/verify-account/{token}
+    http://127.0.0.1:8000/accounts/verify-account/{token}
 
     """
     send_mail(
