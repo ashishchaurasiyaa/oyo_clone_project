@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block start %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            <div class="card shadow-lg border-0">
+                <div class="card-header bg-primary text-white text-center">
+                    <h3 class="card-title">Add New Hotel</h3>
+                    <p class="mb-0">Fill in the details to add your hotel listing</p>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="{% url 'add_hotal' %}">
+                        {% csrf_token %}
+                        <div class="mb-4">
+                            <label for="hotal_name" class="form-label">Hotel Name</label>
+                            <input type="text" class="form-control" id="hotal_name" name="hotal_name" placeholder="Enter hotel name" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="hotal_description" class="form-label">Description</label>
+                            <textarea class="form-control" id="hotal_description" name="hotal_description" rows="3" placeholder="Briefly describe the hotel" required></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label for="hotal_price" class="form-label">Price per Night</label>
+                            <input type="number" class="form-control" id="hotal_price" name="hotal_price" placeholder="Enter price" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="hotal_offer_price" class="form-label">Offer Price</label>
+                            <input type="number" class="form-control" id="hotal_offer_price" name="hotal_offer_price" placeholder="Enter offer price">
+                        </div>
+                        <div class="mb-4">
+                            <label for="hotal_location" class="form-label">Location</label>
+                            <input type="text" class="form-control" id="hotal_location" name="hotal_location" placeholder="Enter hotel location" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="amenities" class="form-label">Amenities</label>
+                            <select class="form-select" id="amenities" name="amenities" multiple>
+                                {% for amenetie in amenities %}
+                                    <option value="{{ amenetie.id }}">{{ amenetie.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="sub_amenities" class="form-label">Sub-Amenities</label>
+                            <select class="form-select" id="sub_amenities" name="sub_amenities" multiple>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById('amenities').addEventListener('change', function() {
+    const selectedAmenities = Array.from(this.selectedOptions).map(option => option.value);
+    const subAmenitiesSelect = document.getElementById('sub_amenities');
+    subAmenitiesSelect.innerHTML = '';
+
+    selectedAmenities.forEach(amenityId => {
+        fetch(`/get-sub-amenities/${amenityId}/`)
+            .then(response => response.json())
+            .then(data => {
+                data.sub_amenities.forEach(subAmenity => {
+                    const option = document.createElement('option');
+                    option.value = subAmenity.id;
+                    option.textContent = subAmenity.name;
+                    subAmenitiesSelect.appendChild(option);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching sub-amenities:', error);
+            });
+    });
+});
+</script>
+{% endblock %}
