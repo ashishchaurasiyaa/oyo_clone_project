@@ -1,0 +1,93 @@
+<!-- about_us.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="about-us">
+    <div class="container py-5">
+        <div class="row text-center">
+            <div class="col-12">
+                <h2 class="fw-bold mb-3" style="color: #d9534f;">About Us</h2>
+                <p class="lead">Welcome to the Best Hotel Management Platform</p>
+                <p class="text-muted">We are dedicated to offering exceptional hospitality and unforgettable experiences.</p>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-lg-6">
+                <img src="https://via.placeholder.com/500x300" alt="Hotel Image" class="img-fluid rounded shadow-lg">
+            </div>
+            <div class="col-lg-6">
+                <h3 class="fw-bold" style="color: #d9534f;">Our Story</h3>
+                <p>Founded with a vision to provide world-class hotel management services, we aim to revolutionize the way people experience hospitality. Our platform ensures that each guest enjoys a seamless booking experience, excellent service, and modern amenities.</p>
+                <p>We specialize in providing top-notch services to hotels, helping them manage their bookings, staff, and facilities efficiently, ensuring guests have the best experience possible. Our team is committed to maintaining the highest standards of customer care and operational excellence.</p>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <h3 class="fw-bold" style="color: #d9534f;">What We Offer</h3>
+                <ul class="list-unstyled">
+                    <li><i class="bi bi-check-circle-fill"></i> 24/7 customer support for seamless operations.</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Real-time booking management and updates.</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Comprehensive hotel management tools for better efficiency.</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Easy integration with existing systems.</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Marketing support to attract and retain customers.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <h3 class="fw-bold" style="color: #d9534f;">Our Mission</h3>
+                <p class="lead">Our mission is to empower hotels with cutting-edge technology and management solutions that improve operational efficiency and guest satisfaction.</p>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <h3 class="fw-bold" style="color: #d9534f;">Join Us Today</h3>
+                <p>Be part of our growing community of hotel owners and managers, and start providing your guests with an unforgettable experience today!</p>
+                <a href="{% url 'register_vendor' %}" class="btn btn-lg btn-light" style="background-color: #d9534f; color: white;">Sign Up as Vendor</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Custom Styles -->
+<style>
+    .about-us {
+        background-color: #f8f9fa;
+        color: #333;
+    }
+
+    .about-us h2 {
+        font-size: 2.5rem;
+        color: #d9534f;
+    }
+
+    .about-us p {
+        font-size: 1.1rem;
+    }
+
+    .about-us h3 {
+        font-size: 2rem;
+        color: #d9534f;
+    }
+
+    .about-us .list-unstyled li {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+
+    .about-us .bi-check-circle-fill {
+        color: #d9534f;
+        margin-right: 10px;
+    }
+
+    .about-us .btn {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        border-radius: 25px;
+    }
+</style>
+{% endblock %}
